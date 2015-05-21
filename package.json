@@ -1,0 +1,37 @@
+{
+  "name": "node-wordpress-classes",
+  "version": "0.0.1",
+  "description": "Interact with Wordpress json API with ES6 Classes",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lingz/node-wordpress-classes.git"
+  },
+  "keywords": [
+    "node",
+    "wordpress",
+    "es6",
+    "classes"
+  ],
+  "author": "Lingliang Zhang (lingliangz@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lingz/node-wordpress-classes/issues"
+  },
+  "homepage": "https://github.com/lingz/node-wordpress-classes",
+  "devDependencies": {
+    "babel": "^5.4.5",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-flowtype": "^0.4.7",
+    "gulp-notify": "^2.2.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "jshint-sourcemap-reporter": "0.0.1"
+  }
+}

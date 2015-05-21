@@ -1,5 +1,7 @@
-FROM phusion/passenger-nodejs
+FROM lingz/node-flow
 MAINTAINER Lingliang Zhang <lingliangz@gmail.com>
+
+ADD . /srv/node-wordpress-classes
 
 CMD /sbin/my_init -- bash -l
 
