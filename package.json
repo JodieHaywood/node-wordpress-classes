@@ -27,6 +27,7 @@
   "homepage": "https://github.com/lingz/node-wordpress-classes",
   "devDependencies": {
     "babel": "^5.4.5",
+    "babel-runtime": "^5.4.5",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
     "gulp-flowtype": "^0.4.7",

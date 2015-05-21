@@ -1,8 +1,12 @@
 [ignore]
 .*/src/.*
+.*/node_modules
+.*/gulpfile.js
+.*/tmp_build_flow
 
 [include]
 ./build_flow
+.*/lib
 
 [libs]
 

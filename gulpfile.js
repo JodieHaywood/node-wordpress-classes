@@ -5,12 +5,12 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     sourcemapReporter = require('jshint-sourcemap-reporter');
  
-var clientSrcDir = "lib", flowDest = "tmp_build_flow";
+var clientSrcDir = "lib", flowDest = "build";
  
-gulp.task('flow:babel', function(cb) {
-    gulp.src(clientSrcDir + '/*.js')
+gulp.task('babel', function(cb) {
+    gulp.src(clientSrcDir + '/**/*.js')
         .pipe(sourcemaps.init())
-        .pipe(babel({ optional: ['runtime'], blacklist: ['flow'] }))
+        .pipe(babel({ optional: ['runtime'], blacklist: [] }))
         .on('error', notify.onError(function(error) {
             return error.message;
         }))
@@ -18,23 +18,50 @@ gulp.task('flow:babel', function(cb) {
         .pipe(gulp.dest(flowDest))
         .on('end', cb);
 });
- 
-gulp.task('flow', ['flow:babel'], function() {
-    gulp.src(flowDest + '/**/*.js')
+
+gulp.task("flow", function() {
+    gulp.src(clientSrcDir + '/**/*.js')
         .pipe(flow({
             all: false,
             weak: false,
             killFlow: false,
             beep: true,
-            abort: false,
+            abort: true,
             reporter: {
                 reporter: function(errors) {
                     return sourcemapReporter.reporter(errors, { sourceRoot: '/' + clientSrcDir + '/' });
                 }
             }
-        }));
+        }))
 });
  
-gulp.task('flow:watch', function() {
-    gulp.watch(clientSrcDir + '/**/*.js', ['client:flow']);
+gulp.task('build', function(cb) {
+    gulp.src(clientSrcDir + '/**/*.js')
+        .pipe(flow({
+            all: false,
+            weak: false,
+            killFlow: false,
+            beep: true,
+            abort: true,
+            reporter: {
+                reporter: function(errors) {
+                    return sourcemapReporter.reporter(errors, { sourceRoot: '/' + clientSrcDir + '/' });
+                }
+            }
+        }))
+	.on('error', function(err) {
+	    this.emit("end");
+	})
+        .pipe(sourcemaps.init())
+        .pipe(babel({ optional: ['runtime'], blacklist: [] }))
+        .on('error', notify.onError(function(error) {
+            return error.message;
+        }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(flowDest))
+        .on('end', cb);
+});
+
+gulp.task('build:watch', function() {
+    gulp.watch(clientSrcDir + '/**/*.js', ['build']);
 });
