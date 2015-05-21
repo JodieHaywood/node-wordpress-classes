@@ -1,4 +1,3 @@
 #!/bin/bash
 
-alias npm-exec='PATH=$(npm bin):$PATH'
-npm-exec gulp build
+PATH=$(npm bin):$PATH gulp build
