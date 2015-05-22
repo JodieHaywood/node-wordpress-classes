@@ -1,8 +1,8 @@
 [ignore]
 .*/gulpfile.js
+.*/node_modules/gulp-flowtype/*
 
 [include]
-.*/lib
 
 [libs]
 
