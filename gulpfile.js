@@ -62,6 +62,6 @@ gulp.task('build', function(cb) {
         .on('end', cb);
 });
 
-gulp.task('build:watch', function() {
+gulp.task('build:watch', ["build"], function() {
     gulp.watch(clientSrcDir + '/**/*.js', ['build']);
 });
