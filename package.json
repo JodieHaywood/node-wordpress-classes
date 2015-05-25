@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --confi=.jestconfig.json"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,9 @@
     "gulp-flowtype": "^0.4.7",
     "gulp-notify": "^2.2.0",
     "gulp-sourcemaps": "^1.5.2",
-    "jshint-sourcemap-reporter": "0.0.1"
+    "jest": "^0.1.40",
+    "jshint-sourcemap-reporter": "0.0.1",
+    "notify-send": "^0.1.2"
   },
   "dependencies": {
     "wordpress-rest-api": "^0.4.0"
