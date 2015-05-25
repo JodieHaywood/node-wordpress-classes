@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --config=.jestconfig.json"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/lingz/node-wordpress-classes",
   "devDependencies": {
     "babel": "^5.4.5",
+    "babel-jest": "^5.2.0",
     "babel-runtime": "^5.4.5",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
@@ -40,5 +41,9 @@
   },
   "dependencies": {
     "wordpress-rest-api": "^0.4.0"
+  },
+  "jest": {
+    "testDirectoryName": "tests",
+    "scriptPreprocessor": "node_modules/babel-jest"
   }
 }
