@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --confi=.jestconfig.json"
+    "test": "jest --config=.jestconfig.json"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-sourcemaps": "^1.5.2",
     "jest": "^0.1.40",
+    "jest-cli": "^0.4.5",
     "jshint-sourcemap-reporter": "0.0.1",
     "notify-send": "^0.1.2"
   },

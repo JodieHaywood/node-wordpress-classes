@@ -1,6 +1,7 @@
 [ignore]
 .*/gulpfile.js
 .*/node_modules/gulp-flowtype/*
+.*/build/*
 
 [include]
 
